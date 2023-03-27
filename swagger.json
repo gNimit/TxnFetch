@@ -10,7 +10,7 @@
         }
     },
     "host": "localhost:8080",
-    "basePath": "/api",
+    "basePath": "/",
     "tags": [
         {
             "name": "transactions",

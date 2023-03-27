@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors')
 const swaggerUi = require('swagger-ui-express'),
     swaggerDocument = require('./swagger.json');
 const {getEthPrice} = require('./services/services');
@@ -11,8 +12,9 @@ const DB_PASSWORD = process.env.PASSWORD;
 const DB_HOST = process.env.HOST;
 
 const app = express();
+app.use(cors())
 app.use(express.json());
-app.use('/api', require('./routes/routes'));
+app.use('/', require('./routes/routes'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.listen(PORT, () => {
     console.log(`Sever started and listening on port ${PORT}`);
