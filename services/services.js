@@ -1,6 +1,7 @@
-const cron = require('node-cron')
-const {transactionModel} = require('../models/transactionModel')
-const {ethereumPriceModel} = require('../models/ethereumPriceModel')
+const cron = require('node-cron');
+const fetch = require(' node-fetch');
+const {transactionModel} = require('../models/transactionModel');
+const {ethereumPriceModel} = require('../models/ethereumPriceModel');
 const coingeckoURL = process.env.COINGECKOURL;
 const etherscanAPI = process.env.ETHERSCANAPI;
 
