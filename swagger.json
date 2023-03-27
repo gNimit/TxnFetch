@@ -1,0 +1,80 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "TxnFetch",
+        "description": "APIs to fetch blockchain transactions of a user and his current balance",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:8080",
+    "basePath": "/api",
+    "tags": [
+        {
+            "name": "transactions",
+            "description": "API to fetch transactions done by an address on blockchain."
+        },
+        {
+            "name": "balance",
+            "description": "API to fetch current balance of an address and current ethereum token price in wei."
+        }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+
+    "paths": {
+        "/transactions/{address}": {
+            "get": {
+                "tags": ["transactions"],
+                "summary": "Get the transactions of an address on a blockchain",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "address",
+                        "in": "path",
+                        "required": true,
+                        "description": "address of an ethereum account.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/balance/{address}": {
+            "get": {
+                "tags": ["balance"],
+                "summary": "Get the current balance of an address and current ethereum price",
+                "responses": {
+                    "200": {
+                        "description" : "OK",
+                        "schema": {
+                            "type": "array"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "address",
+                        "in": "path",
+                        "required": true,
+                        "description": "address of an ethereum account.",
+                        "schema": {
+                            "type": "array"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

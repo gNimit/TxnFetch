@@ -3,7 +3,8 @@ const {getTransactions, getBalance} = require('../services/services');
 
 const router = express.Router();
 
-router.get('/transactions', getTransactions);
-router.get('/balance', getBalance);
+router.get('/', getApiDoc);
+router.get('/transactions/:address', getTransactions);
+router.get('/balance/:address', getBalance);
 
 module.exports = router;

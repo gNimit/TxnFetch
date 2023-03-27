@@ -12,7 +12,7 @@ async function fetchTransactions(address) {
     try {
         let response = await fetch(etherscanURL);
         let data = await response.json();
-        //console.log(data);
+        console.log(data);
         return data["result"];
     } catch (error) {
         console.log(error);
@@ -35,7 +35,7 @@ async function fetchEthPrice() {
 
 
 getBalance = async (req, res) => {
-    let usrEthAddress = req.body.address;
+    let usrEthAddress = req.params.address;
     let tranxs = await fetchTransactions(usrEthAddress);
     if (tranxs === null) {
         res.status(500).send("Server Error: Failed to calculate balance.")
@@ -69,7 +69,7 @@ getEthPrice = function () {
 
 
 getTransactions = async (req, res) => {
-    let usrEthAddress = req.body.address;
+    let usrEthAddress = req.params.address;
     let tranxs = await fetchTransactions(usrEthAddress);
     if (tranxs === null) {
         res.status(500).send("Server Error: Failed to Fetch Transactions")
@@ -101,10 +101,15 @@ getTransactions = async (req, res) => {
     });
 }
 
+getApiDoc = async (req, res) => {
+    res.redirect('/api-docs');
+}
+
 module.exports = {
     getBalance,
     getEthPrice,
-    getTransactions
+    getTransactions,
+    getApiDoc
 };
 
 
