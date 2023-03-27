@@ -1,14 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const config = require('config');
 const swaggerUi = require('swagger-ui-express'),
     swaggerDocument = require('./swagger.json');
 const {getEthPrice} = require('./services/services');
+require('dotenv').config();
 
-const PORT = config.get('app.port') || 4001;
-const DB_USER = config.get('db.user');
-const DB_PASSWORD = config.get('db.password');
-const DB_HOST = config.get('db.host')
+const PORT = process.env.PORT || 4001;
+const DB_USER = process.env.USER;
+const DB_PASSWORD = process.env.PASSWORD;
+const DB_HOST = process.env.HOST;
 
 const app = express();
 app.use(express.json());

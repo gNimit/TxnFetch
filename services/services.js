@@ -1,10 +1,8 @@
 const cron = require('node-cron')
-const config = require('config')
-
 const {transactionModel} = require('../models/transactionModel')
 const {ethereumPriceModel} = require('../models/ethereumPriceModel')
-const coingeckoURL = config.get('api.coingecko');
-const etherscanAPI = config.get('api.etherscan');
+const coingeckoURL = process.env.COINGECKOURL;
+const etherscanAPI = process.env.ETHERSCANAPI;
 
 async function fetchTransactions(address) {
     let etherscanAddress = address;
