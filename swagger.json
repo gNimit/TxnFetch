@@ -10,9 +10,6 @@
         }
     },
     "host": "txnfetch.onrender.com",
-    "schemes": [
-        "https"
-    ],
     "basePath": "/",
     "tags": [
         {
@@ -24,7 +21,7 @@
             "description": "API to fetch current balance of an address and current ethereum token price in wei."
         }
     ],
-    "schemes": ["http"],
+    "schemes": ["https"],
     "consumes": ["application/json"],
     "produces": ["application/json"],
 
