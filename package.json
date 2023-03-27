@@ -1,0 +1,19 @@
+{
+  "name": "fetcheth",
+  "version": "1.0.0",
+  "description": "A package to fetch crypto transactions of user and the price of ethereum.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nimit Gaur",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.9",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3",
+    "node-cron": "^3.0.2",
+    "nodemon": "^2.0.22"
+  }
+}
