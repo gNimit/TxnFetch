@@ -27,7 +27,7 @@ async function fetchEthPrice() {
         return price;
     } catch (error) {
         console.log(error);
-        return err;
+        return null;
     }
 }
 
